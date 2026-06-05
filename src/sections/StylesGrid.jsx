@@ -5,7 +5,7 @@ import SectionHeader from '../components/SectionHeader.jsx';
 const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
 const styles = [
-  { img: 'work-grey-subway', t: 'Classic & Timeless', d: 'Elegant, traditional finishes that never go out of style.' },
+  { img: 'work-patterned-floor', t: 'Classical', d: 'Elegant, traditional finishes that never go out of style.' },
   { img: 'work-beige-bathroom', t: 'Modern & Minimal', d: 'Clean lines and contemporary looks for a sleek finish.' },
   { img: 'work-natural-stone', t: 'Natural Stone', d: 'Premium natural stone for a unique, high-end feel.' },
   { img: 'work-victorian-floor', t: 'Mosaic & Feature', d: 'Eye-catching patterns for standout designs.' },
