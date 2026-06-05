@@ -3,7 +3,7 @@ import SectionHeader from '../components/SectionHeader.jsx';
 const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
 const stats = [
-  { n: '15+', l: 'Years Experience' },
+  { n: '10+', l: 'Years Experience' },
   { n: '500+', l: 'Projects Completed' },
   { n: '100%', l: 'Satisfaction Focused' },
 ];
