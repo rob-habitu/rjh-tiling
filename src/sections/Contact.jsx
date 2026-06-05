@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import Button from '../components/Button.jsx';
 import Icon from '../components/Icon.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
@@ -12,9 +12,7 @@ const rows = [
 ];
 
 export default function Contact() {
-  const [sent, setSent] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const formRef = useRef(null);
+  const [state, handleSubmit] = useForm('mqeoaorr');
 
   const field = {
     fontFamily: 'var(--font-body)',
@@ -28,28 +26,7 @@ export default function Contact() {
     boxSizing: 'border-box',
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    try {
-      const response = await fetch('https://formspree.io/f/TODO_FORMSPREE_ID', {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(formRef.current),
-      });
-      if (response.ok) {
-        setSent(true);
-      } else {
-        // Fallback: still show success for demo purposes
-        setSent(true);
-      }
-    } catch {
-      // Fallback: still show success for demo purposes
-      setSent(true);
-    } finally {
-      setSubmitting(false);
-    }
-  };
+  const errStyle = { color: '#E2A4A4', fontSize: 12.5, margin: '-6px 0 0' };
 
   return (
     <section id="contact" className="rjh-section" style={{ background: 'var(--charcoal)', padding: '88px 0' }}>
@@ -88,7 +65,7 @@ export default function Contact() {
         </div>
 
         <div style={{ background: 'var(--charcoal-2)', borderRadius: 4, padding: '32px 30px', boxShadow: 'var(--shadow-lg)' }}>
-          {sent ? (
+          {state.succeeded ? (
             <div style={{ textAlign: 'center', padding: '40px 0' }}>
               <div style={{
                 width: 56,
@@ -116,9 +93,6 @@ export default function Contact() {
             </div>
           ) : (
             <form
-              ref={formRef}
-              action="https://formspree.io/f/TODO_FORMSPREE_ID"
-              method="POST"
               onSubmit={handleSubmit}
               style={{ display: 'grid', gap: 14 }}
             >
@@ -128,6 +102,7 @@ export default function Contact() {
               <input style={field} name="name" placeholder="Your name" required />
               <input style={field} name="phone" placeholder="Phone number" required />
               <input style={field} name="email" placeholder="Email address" type="email" />
+              <ValidationError prefix="Email" field="email" errors={state.errors} style={errStyle} />
               <select style={field} name="work_type" defaultValue="">
                 <option value="" disabled>Type of work…</option>
                 <option>Bathroom tiling</option>
@@ -142,11 +117,14 @@ export default function Contact() {
                 name="message"
                 placeholder="Tell us a little about the project…"
               ></textarea>
+              <ValidationError field="message" errors={state.errors} style={errStyle} />
+              <ValidationError errors={state.errors} style={errStyle} />
               <Button
                 type="submit"
-                style={{ justifyContent: 'center', width: '100%', padding: '16px' }}
+                disabled={state.submitting}
+                style={{ justifyContent: 'center', width: '100%', padding: '16px', opacity: state.submitting ? 0.7 : 1 }}
               >
-                {submitting ? 'Sending…' : 'Request My Free Quote'}
+                {state.submitting ? 'Sending…' : 'Request My Free Quote'}
               </Button>
             </form>
           )}

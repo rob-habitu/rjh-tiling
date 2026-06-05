@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function Button({ children, variant = 'primary', onClick, type = 'button', style = {} }) {
+export default function Button({ children, variant = 'primary', onClick, type = 'button', disabled = false, style = {} }) {
   const base = {
     fontFamily: 'var(--font-body)',
     fontWeight: 600,
@@ -28,15 +28,17 @@ export default function Button({ children, variant = 'primary', onClick, type = 
   const [down, setDown] = useState(false);
 
   let s = { ...base, ...variants[variant], ...style };
-  if (hover && variant === 'primary') s.background = 'var(--bronze-deep)';
-  if (hover && variant === 'ghost') { s.background = 'var(--ink)'; s.color = 'var(--bone)'; }
-  if (hover && variant === 'ghostDark') { s.background = 'var(--on-dark)'; s.color = 'var(--charcoal)'; }
-  if (down) s.transform = 'translateY(1px)';
+  if (hover && !disabled && variant === 'primary') s.background = 'var(--bronze-deep)';
+  if (hover && !disabled && variant === 'ghost') { s.background = 'var(--ink)'; s.color = 'var(--bone)'; }
+  if (hover && !disabled && variant === 'ghostDark') { s.background = 'var(--on-dark)'; s.color = 'var(--charcoal)'; }
+  if (down && !disabled) s.transform = 'translateY(1px)';
+  if (disabled) s.cursor = 'not-allowed';
 
   return (
     <button
       type={type}
       onClick={onClick}
+      disabled={disabled}
       style={s}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => { setHover(false); setDown(false); }}
