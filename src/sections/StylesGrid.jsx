@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Button from '../components/Button.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
+import { scrollToId } from '../components/Nav.jsx';
 
 const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
@@ -57,7 +58,7 @@ export default function StylesGrid() {
           {styles.map(s => <StyleCard key={s.t} {...s} />)}
         </div>
         <div style={{ textAlign: 'center', marginTop: 44 }}>
-          <Button>View Our Work</Button>
+          <Button onClick={() => scrollToId('projects')}>View Our Work</Button>
         </div>
       </div>
     </section>
