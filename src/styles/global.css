@@ -1,0 +1,65 @@
+/* ============================================================
+   RJH TILING — Global resets and responsive utilities
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bone);
+}
+
+::selection {
+  background: var(--bronze);
+  color: #fff;
+}
+
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+/* ---- Responsive grid overrides ---- */
+@media (max-width: 980px) {
+  .rjh-styles-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .rjh-about-grid,
+  .rjh-contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .rjh-foot-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .rjh-feature-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 32px 0;
+  }
+  .rjh-split,
+  .rjh-split-diff {
+    grid-template-columns: 1fr !important;
+  }
+  .rjh-proj-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .rjh-foot-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .rjh-styles-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
