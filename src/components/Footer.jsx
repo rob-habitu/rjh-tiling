@@ -63,7 +63,7 @@ export default function Footer() {
 
         <div style={col}>
           <div style={head}>Our Services</div>
-          {['Bathroom Tiling', 'Kitchen & Splashback', 'Floor Tiling', 'Wall Tiling', 'Grouting & Repair', 'Waterproofing'].map(l => (
+          {['Bathroom Tiling', 'Kitchen & Splashback', 'Floor Tiling', 'Wall Tiling', 'Stone Wall Cladding', 'Grouting & Repair', 'Waterproofing'].map(l => (
             <button key={l} onClick={() => scrollToId('services')} style={link}>{l}</button>
           ))}
         </div>

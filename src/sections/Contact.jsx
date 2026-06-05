@@ -133,6 +133,7 @@ export default function Contact() {
                 <option>Bathroom tiling</option>
                 <option>Kitchen &amp; splashback</option>
                 <option>Floor tiling</option>
+                <option>Stone wall cladding</option>
                 <option>External / stonework</option>
                 <option>Other</option>
               </select>
