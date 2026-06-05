@@ -28,6 +28,11 @@ export default function Contact() {
 
   const errStyle = { color: '#E2A4A4', fontSize: 12.5, margin: '-6px 0 0' };
 
+  // Dropdown options render against the OS's light popup background, so give
+  // them explicit dark text (otherwise they inherit the field's light colour
+  // and become unreadable when the list opens).
+  const optStyle = { color: 'var(--ink)', background: 'var(--bone-2)' };
+
   return (
     <section id="contact" className="rjh-section" style={{ background: 'var(--charcoal)', padding: '88px 0' }}>
       <div
@@ -104,13 +109,13 @@ export default function Contact() {
               <input style={field} name="email" placeholder="Email address" type="email" />
               <ValidationError prefix="Email" field="email" errors={state.errors} style={errStyle} />
               <select style={field} name="work_type" defaultValue="">
-                <option value="" disabled>Type of work…</option>
-                <option>Bathroom tiling</option>
-                <option>Kitchen &amp; splashback</option>
-                <option>Floor tiling</option>
-                <option>Stone wall cladding</option>
-                <option>External / stonework</option>
-                <option>Other</option>
+                <option value="" disabled style={{ ...optStyle, color: 'var(--ink-2)' }}>Type of work…</option>
+                <option style={optStyle}>Bathroom tiling</option>
+                <option style={optStyle}>Kitchen &amp; splashback</option>
+                <option style={optStyle}>Floor tiling</option>
+                <option style={optStyle}>Stone wall cladding</option>
+                <option style={optStyle}>External / stonework</option>
+                <option style={optStyle}>Other</option>
               </select>
               <textarea
                 style={{ ...field, minHeight: 90, resize: 'vertical' }}
