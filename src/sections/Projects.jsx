@@ -1,11 +1,25 @@
+import { useState } from 'react';
 import Button from '../components/Button.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
 
 const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
-const imgs = ['work-grey-subway', 'work-victorian-floor', 'work-beige-bathroom', 'work-patterned-floor'];
+// All available project photos. The first INITIAL are shown by default;
+// "View More Projects" reveals the rest.
+const all = [
+  'work-grey-subway',
+  'work-victorian-floor',
+  'work-beige-bathroom',
+  'work-patterned-floor',
+  'work-teal-shower',
+  'work-natural-stone',
+];
+const INITIAL = 4;
 
 export default function Projects() {
+  const [expanded, setExpanded] = useState(false);
+  const visible = expanded ? all : all.slice(0, INITIAL);
+
   return (
     <section id="projects" className="rjh-section" style={{ background: 'var(--bone)', padding: '80px 0' }}>
       <div className="rjh-wrap" style={WRAP}>
@@ -14,7 +28,7 @@ export default function Projects() {
           className="rjh-proj-grid"
           style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 18, marginTop: 44 }}
         >
-          {imgs.map(i => (
+          {visible.map(i => (
             <div key={i} style={{ borderRadius: 6, overflow: 'hidden', aspectRatio: '1/1', background: 'var(--bone-3)' }}>
               <img
                 src={`/assets/${i}.jpg`}
@@ -24,9 +38,13 @@ export default function Projects() {
             </div>
           ))}
         </div>
-        <div style={{ textAlign: 'center', marginTop: 44 }}>
-          <Button variant="ghost">View More Projects</Button>
-        </div>
+        {all.length > INITIAL && (
+          <div style={{ textAlign: 'center', marginTop: 44 }}>
+            <Button variant="ghost" onClick={() => setExpanded(e => !e)}>
+              {expanded ? 'Show Less' : 'View More Projects'}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
