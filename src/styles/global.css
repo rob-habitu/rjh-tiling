@@ -24,6 +24,11 @@ section[id] {
   scroll-margin-top: 84px;
 }
 
+/* Guard against any image forcing horizontal scroll on small screens */
+img {
+  max-width: 100%;
+}
+
 /* ---- Responsive grid overrides ---- */
 @media (max-width: 980px) {
   .rjh-styles-grid {
@@ -43,7 +48,13 @@ section[id] {
 @media (max-width: 760px) {
   .rjh-feature-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 32px 0;
+    gap: 36px 0 !important;
+    padding: 44px 22px !important;
+  }
+  /* drop the vertical dividers + tighten item gutters when stacked */
+  .rjh-feature-grid > div {
+    border-left: 0 !important;
+    padding: 0 8px !important;
   }
   .rjh-split,
   .rjh-split-diff {
@@ -56,10 +67,51 @@ section[id] {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  /* shrink generous side padding so content isn't squeezed */
+  .rjh-wrap {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+  /* normalise the split-panel padding (no more lopsided 6vw vs max()) */
+  .rjh-split > div,
+  .rjh-diff-body {
+    padding: 52px 22px !important;
+  }
+  /* stack the "Why Choose" promise items into clean full-width rows */
+  .rjh-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+  /* trim section vertical rhythm for phones */
+  .rjh-section {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+  /* keep the About stats on one tidy row that can wrap */
+  .rjh-stats {
+    gap: 22px !important;
+    flex-wrap: wrap !important;
+  }
 }
 
 @media (max-width: 560px) {
   .rjh-styles-grid {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .rjh-foot-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  /* a stronger, more vertical scrim keeps hero text legible on phones */
+  .rjh-hero-scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(28, 26, 22, 0.55) 0%,
+      rgba(28, 26, 22, 0.82) 100%
+    ) !important;
+  }
+  .rjh-hero-sec {
+    min-height: 480px !important;
   }
 }

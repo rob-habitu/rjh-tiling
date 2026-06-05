@@ -4,14 +4,14 @@ const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
 export default function Hero({ onQuote }) {
   return (
-    <section id="home" style={{ position: 'relative', minHeight: 560, display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+    <section id="home" className="rjh-hero-sec" style={{ position: 'relative', minHeight: 560, display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
       <img
         src="/assets/work-beige-bathroom.jpg"
         alt=""
         style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
       />
-      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(28,26,22,.92) 0%, rgba(28,26,22,.7) 42%, rgba(28,26,22,.15) 100%)' }}></div>
-      <div style={{ ...WRAP, position: 'relative', width: '100%' }}>
+      <div className="rjh-hero-scrim" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(28,26,22,.92) 0%, rgba(28,26,22,.7) 42%, rgba(28,26,22,.15) 100%)' }}></div>
+      <div className="rjh-wrap" style={{ ...WRAP, position: 'relative', width: '100%' }}>
         <h1 style={{
           fontFamily: 'var(--font-display)',
           fontWeight: 700,

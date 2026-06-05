@@ -47,8 +47,8 @@ function StyleCard({ img, t, d }) {
 
 export default function StylesGrid() {
   return (
-    <section id="styles" style={{ background: 'var(--bone)', padding: '80px 0' }}>
-      <div style={WRAP}>
+    <section id="styles" className="rjh-section" style={{ background: 'var(--bone)', padding: '80px 0' }}>
+      <div className="rjh-wrap" style={WRAP}>
         <SectionHeader eyebrow="Our Specialisms" title="Tiling Styles We Specialise In" align="center" />
         <div
           className="rjh-styles-grid"

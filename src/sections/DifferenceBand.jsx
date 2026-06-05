@@ -10,7 +10,7 @@ export default function DifferenceBand({ onQuote }) {
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
       </div>
-      <div style={{
+      <div className="rjh-diff-body" style={{
         padding: '72px max(40px, calc((100vw - 1200px)/2 + 40px)) 72px 6vw',
         display: 'flex',
         flexDirection: 'column',

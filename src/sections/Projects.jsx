@@ -7,8 +7,8 @@ const imgs = ['work-grey-subway', 'work-victorian-floor', 'work-beige-bathroom',
 
 export default function Projects() {
   return (
-    <section id="projects" style={{ background: 'var(--bone)', padding: '80px 0' }}>
-      <div style={WRAP}>
+    <section id="projects" className="rjh-section" style={{ background: 'var(--bone)', padding: '80px 0' }}>
+      <div className="rjh-wrap" style={WRAP}>
         <SectionHeader eyebrow="Recent Work" title="Recent Projects" align="center" />
         <div
           className="rjh-proj-grid"

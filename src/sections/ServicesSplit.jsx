@@ -34,7 +34,7 @@ export default function ServicesSplit() {
         <p style={{ color: 'var(--on-dark-2)', fontSize: 16, lineHeight: 1.65, maxWidth: 460, margin: '0 0 30px' }}>
           With years of experience and a passion for perfection, we bring your vision to life with clean lines, durable finishes, and a commitment to quality you can see.
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 22 }}>
+        <div className="rjh-why-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 22 }}>
           {whys.map(w => (
             <div key={w.t}>
               <Icon name={w.icon} size={28} color="var(--bronze-soft)" />

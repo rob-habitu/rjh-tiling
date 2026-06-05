@@ -10,9 +10,9 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" style={{ background: 'var(--bone-2)', padding: '88px 0' }}>
+    <section id="about" className="rjh-section" style={{ background: 'var(--bone-2)', padding: '88px 0' }}>
       <div
-        className="rjh-about-grid"
+        className="rjh-about-grid rjh-wrap"
         style={{ ...WRAP, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}
       >
         <div style={{ borderRadius: 6, overflow: 'hidden', aspectRatio: '4/5' }}>
@@ -30,7 +30,7 @@ export default function About() {
           <p style={{ color: 'var(--ink-2)', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 30px', maxWidth: 520 }}>
             From concept to completion, we take pride in delivering flawless results tailored to your space. We&apos;re not happy until you&apos;re happy.
           </p>
-          <div style={{ display: 'flex', gap: 40 }}>
+          <div className="rjh-stats" style={{ display: 'flex', gap: 40 }}>
             {stats.map(s => (
               <div key={s.l}>
                 <div style={{

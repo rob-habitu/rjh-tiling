@@ -52,9 +52,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" style={{ background: 'var(--charcoal)', padding: '88px 0' }}>
+    <section id="contact" className="rjh-section" style={{ background: 'var(--charcoal)', padding: '88px 0' }}>
       <div
-        className="rjh-contact-grid"
+        className="rjh-contact-grid rjh-wrap"
         style={{ ...WRAP, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56 }}
       >
         <div>
