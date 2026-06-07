@@ -25,7 +25,7 @@ export default function About() {
         <div>
           <SectionHeader eyebrow="About RJH Tiling" title="Luton's tiling specialists." />
           <p style={{ color: 'var(--ink-2)', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 18px', maxWidth: 520 }}>
-            RJH Tiling is an independent tiling and stonework company serving Luton and the surrounding areas. We specialise in bathrooms, kitchens, flooring, and external tiling &amp; stonework — bringing precision, clean lines and a lasting finish to every project.
+            Founded and run by Richard Horwood, RJH Tiling is an independent tiling and stonework company serving Luton and the surrounding areas. We specialise in bathrooms, kitchens, flooring, and external tiling &amp; stonework — bringing precision, clean lines and a lasting finish to every project.
           </p>
           <p style={{ color: 'var(--ink-2)', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 30px', maxWidth: 520 }}>
             From concept to completion, we take pride in delivering flawless results tailored to your space. We&apos;re not happy until you&apos;re happy.

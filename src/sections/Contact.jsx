@@ -7,7 +7,7 @@ const WRAP = { maxWidth: 1200, margin: '0 auto', padding: '0 40px' };
 
 const rows = [
   { icon: 'phone', t: 'Call us', d: '07921 843 606' },
-  { icon: 'mail', t: 'Email us', d: 'rich@rjh-tiling.co.uk' },
+  { icon: 'mail', t: 'Email us', d: 'quote@rjhtiling.co.uk' },
   { icon: 'map-pin', t: 'Areas covered', d: 'Luton & surrounding areas' },
 ];
 

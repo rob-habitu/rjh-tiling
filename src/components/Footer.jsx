@@ -76,7 +76,7 @@ export default function Footer() {
           </span>
           <span style={{ ...link, display: 'inline-flex', gap: 8, alignItems: 'center', cursor: 'default' }}>
             <Icon name="mail" size={15} color="var(--bronze-soft)" />
-            rich@rjh-tiling.co.uk
+            quote@rjhtiling.co.uk
           </span>
           <span style={{ ...link, display: 'inline-flex', gap: 8, alignItems: 'center', cursor: 'default' }}>
             <Icon name="map-pin" size={15} color="var(--bronze-soft)" />
