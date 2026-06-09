@@ -6,7 +6,6 @@ const services = [
   'Kitchen & Splashback Tiling',
   'Floor Tiling',
   'Wall Tiling',
-  'Stone Wall Cladding',
   'Grouting & Repair Work',
   'Waterproofing',
 ];

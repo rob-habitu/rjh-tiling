@@ -113,7 +113,6 @@ export default function Contact() {
                 <option style={optStyle}>Bathroom tiling</option>
                 <option style={optStyle}>Kitchen &amp; splashback</option>
                 <option style={optStyle}>Floor tiling</option>
-                <option style={optStyle}>Stone wall cladding</option>
                 <option style={optStyle}>External / stonework</option>
                 <option style={optStyle}>Other</option>
               </select>
